@@ -1,0 +1,6 @@
+{
+  "fixturesFolder": false,
+  "defaultCommandTimeout": 10000,
+  "chromeWebSecurity": false,
+  "integrationFolder": "src/tests/cypress/integration"
+}

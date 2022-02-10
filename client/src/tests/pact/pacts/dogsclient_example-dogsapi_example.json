@@ -1,0 +1,49 @@
+{
+  "consumer": {
+    "name": "DogsClient Example"
+  },
+  "provider": {
+    "name": "DogsApi Example"
+  },
+  "interactions": [
+    {
+      "description": "a request for dogs",
+      "providerState": "there are dogs",
+      "request": {
+        "method": "GET",
+        "path": "/dogs"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": [
+          {
+            "name": "Qiwi",
+            "breed": "Boxer",
+            "sex": "girl",
+            "tail": [
+              "long",
+              "strong",
+              "beautiful"
+            ]
+          }
+        ],
+        "matchingRules": {
+          "$.body": {
+            "min": 1
+          },
+          "$.body[*].*": {
+            "match": "type"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}
